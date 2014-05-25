@@ -1,0 +1,20 @@
+[submodule "_vendors/AFNetworking"]
+	path = _vendors/AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking
+	ignore = dirty
+[submodule "_vendors/CoreBitcoin"]
+	path = _vendors/CoreBitcoin
+	url = https://github.com/oleganza/CoreBitcoin
+	ignore = dirty
+[submodule "_vendors/OpenSSL"]
+	path = _vendors/OpenSSL
+	url = https://github.com/x2on/OpenSSL-for-iPhone
+	ignore = dirty
+[submodule "_vendors/ZBar"]
+	path = _vendors/ZBar
+	url = https://github.com/ZBar/ZBar
+	ignore = dirty
+[submodule "_vendors/ECSlidingViewController"]
+	path = _vendors/ECSlidingViewController
+	url = https://github.com/ECSlidingViewController/ECSlidingViewController
+	ignore = dirty
