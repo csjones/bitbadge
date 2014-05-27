@@ -25,6 +25,9 @@ profile
 DerivedData
 .idea/
 
+*.a
+ZBar
+
 # Lets not commit assets
 *.ttf
 *.jpg
