@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface MenuVC : UIViewController
+
+- (IBAction)didTapButton:(id)sender;
 
 @end

@@ -7,10 +7,7 @@
 //
 
 #import "MenuVC.h"
-
-@interface MenuVC ()
-
-@end
+#import "UIViewController+ECSlidingViewController.h"
 
 @implementation MenuVC
 
@@ -24,6 +21,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)didTapButton:(id)sender
+{
+    // This undoes the Zoom Transition's scale because it affects the other transitions.
+    // You normally wouldn't need to do anything like this, but we're changing transitions
+    // dynamically so everything needs to start in a consistent state.
+    self.slidingViewController.topViewController.view.layer.transform = CATransform3DMakeScale(1, 1, 1);
+    
+    self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Scan"];
+    
+    [self.slidingViewController resetTopViewAnimated:YES];
 }
 
 /*
