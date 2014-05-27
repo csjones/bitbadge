@@ -7,34 +7,108 @@
 //
 
 #import "ScanVC.h"
-
-@interface ScanVC ()
-
-@end
+#import "ZBarImage.h"
+#import "ZBarImageScanner.h"
+#import "UIViewController+ECSlidingViewController.h"
 
 @implementation ScanVC
 
-- (void)viewDidLoad
+- ( id )initWithCoder:( NSCoder* )aDecoder
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    if ( self = [super initWithCoder:aDecoder] )
+    {
+        if ( !_weakReaderView )
+        {
+            _weakMainQueue = [NSOperationQueue mainQueue];
+            
+            [_weakMainQueue addOperationWithBlock:^{
+                ZBarImageScanner *scanner = [[ZBarImageScanner alloc] init];
+                
+                [scanner setSymbology:0
+                               config:ZBAR_CFG_ENABLE
+                                   to:0];
+                
+                [scanner setSymbology:ZBAR_QRCODE
+                               config:ZBAR_CFG_ENABLE
+                                   to:1];
+                
+                [scanner setSymbology:ZBAR_QRCODE
+                               config:ZBAR_CFG_MIN_LEN
+                                   to:0];
+                
+                [scanner setSymbology:ZBAR_QRCODE
+                               config:ZBAR_CFG_MAX_LEN
+                                   to:0];
+                
+                [scanner setSymbology:ZBAR_QRCODE
+                               config:ZBAR_CFG_POSITION
+                                   to:0];
+                
+                scanner.enableCache = YES;
+                
+                ZBarReaderView *readerView = [[ZBarReaderView alloc] initWithImageScanner:scanner];
+                
+                readerView.backgroundColor = [UIColor redColor];
+                readerView.trackingColor = [UIColor clearColor];
+                readerView.torchMode = AVCaptureTorchModeOff;
+                readerView.layer.cornerRadius = 9.f;
+                readerView.frame = self.view.frame;
+                readerView.readerDelegate = self;
+                readerView.allowsPinchZoom = NO;
+                readerView.tracksSymbols = NO;
+                readerView.alpha = .0f;
+                
+                [readerView start];
+                
+                _weakReaderView = readerView;
+                
+                [self.view insertSubview:readerView atIndex:0];
+                
+                [UIView animateWithDuration:.4
+                                      delay:.5
+                                    options:0
+                                 animations:^(void){
+                                     _weakReaderView.alpha = 1.f;
+                                 }
+                                 completion:^(BOOL finished){ }];
+            }];
+        }
+    }
+
+    return self;
 }
 
-- (void)didReceiveMemoryWarning
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   ZBarReaderViewDelegate
+
+- ( IBAction )didTapButton:( id )sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
 
-/*
-#pragma mark - Navigation
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   ZBarReaderViewDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- ( void )readerView:( ZBarReaderView* )readerView didReadSymbols:( ZBarSymbolSet* )symbols fromImage:( UIImage* )image
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//    if( !_didScanCode )
+//    {
+//        _didScanCode = TRUE;
+//        
+//        NSString    *address = @"";
+//        
+//        for(ZBarSymbol *symbol in symbols)
+//            address = symbol.data;
+//        
+//        ScanOptionsVC *scanOptionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Options"];
+//        
+//        scanOptionsVC.scannedAddress = address;
+//        
+//        if (![self.slidingViewController.underRightViewController isKindOfClass:[ScanOptionsVC class]])
+//            self.slidingViewController.underRightViewController = scanOptionsVC;
+//        
+//        [self.slidingViewController anchorTopViewTo:ECLeft];
+//    }
 }
-*/
 
 @end

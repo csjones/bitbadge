@@ -6,8 +6,15 @@
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZBarSDK.h"
 
-@interface ScanVC : UIViewController
+@interface ScanVC : UIViewController < ZBarReaderViewDelegate >
+{
+    __weak NSOperationQueue *_weakMainQueue;
+}
+
+@property ( weak, nonatomic ) IBOutlet ZBarReaderView *weakReaderView;
+
+- ( IBAction )didTapButton:( id )sender;
 
 @end
