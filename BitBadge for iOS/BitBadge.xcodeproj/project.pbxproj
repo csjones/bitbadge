@@ -17,13 +17,18 @@
 		3F33735A19318ED40003790B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F33735819318ED40003790B /* Main_iPad.storyboard */; };
 		3F33735B19318ED40003790B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F33735919318ED40003790B /* Main_iPhone.storyboard */; };
 		3F33735E19318F280003790B /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33735D19318F280003790B /* MenuVC.m */; };
+		3F3527771933F9E800FF1A6F /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3527761933F9E800FF1A6F /* libzbar.a */; };
+		3F3527791933FA1A00FF1A6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3527781933FA1A00FF1A6F /* QuartzCore.framework */; };
+		3F35277C1933FA2400FF1A6F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F35277A1933FA2400FF1A6F /* CoreMedia.framework */; };
+		3F35277D1933FA2400FF1A6F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F35277B1933FA2400FF1A6F /* CoreVideo.framework */; };
+		3F35277F1933FA3000FF1A6F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F35277E1933FA3000FF1A6F /* AVFoundation.framework */; };
+		3F3527831933FA4E00FF1A6F /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3527821933FA4E00FF1A6F /* libiconv.dylib */; };
 		3FB8E42D19317A7200B713CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42C19317A7200B713CA /* Foundation.framework */; };
 		3FB8E42F19317A7200B713CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42E19317A7200B713CA /* CoreGraphics.framework */; };
 		3FB8E43119317A7200B713CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E43019317A7200B713CA /* UIKit.framework */; };
 		3FB8E43719317A7200B713CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FB8E43519317A7200B713CA /* InfoPlist.strings */; };
 		3FB8E43919317A7200B713CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8E43819317A7200B713CA /* main.m */; };
 		3FB8E43D19317A7200B713CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8E43C19317A7200B713CA /* AppDelegate.m */; };
-		3FB8E44619317A7200B713CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8E44519317A7200B713CA /* ViewController.m */; };
 		3FB8E44819317A7200B713CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB8E44719317A7200B713CA /* Images.xcassets */; };
 		3FB8E44F19317A7200B713CA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E44E19317A7200B713CA /* XCTest.framework */; };
 		3FB8E45019317A7200B713CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42C19317A7200B713CA /* Foundation.framework */; };
@@ -62,6 +67,36 @@
 		3F33735919318ED40003790B /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = Storyboards/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		3F33735C19318F280003790B /* MenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuVC.h; path = Controllers/MenuVC.h; sourceTree = "<group>"; };
 		3F33735D19318F280003790B /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuVC.m; path = Controllers/MenuVC.m; sourceTree = "<group>"; };
+		3F3527761933F9E800FF1A6F /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzbar.a; path = "../_vendors/ZBar/iphone/build/Debug-iphoneos/libzbar.a"; sourceTree = "<group>"; };
+		3F3527781933FA1A00FF1A6F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3F35277A1933FA2400FF1A6F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3F35277B1933FA2400FF1A6F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		3F35277E1933FA3000FF1A6F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3F3527801933FA4300FF1A6F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3F3527821933FA4E00FF1A6F /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		3F35278519341F4A00FF1A6F /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
+		3F35278619341F4A00FF1A6F /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		3F35278719341F4A00FF1A6F /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		3F35278819341F4A00FF1A6F /* ImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScanner.h; sourceTree = "<group>"; };
+		3F35278919341F4A00FF1A6F /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processor.h; sourceTree = "<group>"; };
+		3F35278A19341F4A00FF1A6F /* QZBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZBar.h; sourceTree = "<group>"; };
+		3F35278B19341F4A00FF1A6F /* QZBarImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZBarImage.h; sourceTree = "<group>"; };
+		3F35278C19341F4A00FF1A6F /* Scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
+		3F35278D19341F4A00FF1A6F /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Symbol.h; sourceTree = "<group>"; };
+		3F35278E19341F4A00FF1A6F /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		3F35278F19341F4A00FF1A6F /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		3F35279019341F4A00FF1A6F /* zbargtk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zbargtk.h; sourceTree = "<group>"; };
+		3F35279219341F9300FF1A6F /* zbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zbar.h; path = ../zbar.h; sourceTree = "<group>"; };
+		3F35279319341FB000FF1A6F /* ZBarCameraSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarCameraSimulator.h; path = ../../iphone/include/ZBarSDK/ZBarCameraSimulator.h; sourceTree = "<group>"; };
+		3F35279419341FB000FF1A6F /* ZBarCaptureReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarCaptureReader.h; path = ../../iphone/include/ZBarSDK/ZBarCaptureReader.h; sourceTree = "<group>"; };
+		3F35279519341FB000FF1A6F /* ZBarHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarHelpController.h; path = ../../iphone/include/ZBarSDK/ZBarHelpController.h; sourceTree = "<group>"; };
+		3F35279619341FB000FF1A6F /* ZBarImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarImage.h; path = ../../iphone/include/ZBarSDK/ZBarImage.h; sourceTree = "<group>"; };
+		3F35279719341FB000FF1A6F /* ZBarImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarImageScanner.h; path = ../../iphone/include/ZBarSDK/ZBarImageScanner.h; sourceTree = "<group>"; };
+		3F35279819341FB000FF1A6F /* ZBarReaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarReaderController.h; path = ../../iphone/include/ZBarSDK/ZBarReaderController.h; sourceTree = "<group>"; };
+		3F35279919341FB000FF1A6F /* ZBarReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarReaderView.h; path = ../../iphone/include/ZBarSDK/ZBarReaderView.h; sourceTree = "<group>"; };
+		3F35279A19341FB000FF1A6F /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarReaderViewController.h; path = ../../iphone/include/ZBarSDK/ZBarReaderViewController.h; sourceTree = "<group>"; };
+		3F35279B19341FB000FF1A6F /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarSDK.h; path = ../../iphone/include/ZBarSDK/ZBarSDK.h; sourceTree = "<group>"; };
+		3F35279C19341FB000FF1A6F /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarSymbol.h; path = ../../iphone/include/ZBarSDK/ZBarSymbol.h; sourceTree = "<group>"; };
 		3FB8E42919317A7200B713CA /* BitBadge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitBadge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB8E42C19317A7200B713CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FB8E42E19317A7200B713CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,8 +107,6 @@
 		3FB8E43A19317A7200B713CA /* BitBadge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BitBadge-Prefix.pch"; sourceTree = "<group>"; };
 		3FB8E43B19317A7200B713CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3FB8E43C19317A7200B713CA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3FB8E44419317A7200B713CA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3FB8E44519317A7200B713CA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3FB8E44719317A7200B713CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3FB8E44D19317A7200B713CA /* BitBadgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitBadgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB8E44E19317A7200B713CA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -87,6 +120,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3527831933FA4E00FF1A6F /* libiconv.dylib in Frameworks */,
+				3F35277F1933FA3000FF1A6F /* AVFoundation.framework in Frameworks */,
+				3F35277C1933FA2400FF1A6F /* CoreMedia.framework in Frameworks */,
+				3F35277D1933FA2400FF1A6F /* CoreVideo.framework in Frameworks */,
+				3F3527791933FA1A00FF1A6F /* QuartzCore.framework in Frameworks */,
+				3F3527771933F9E800FF1A6F /* libzbar.a in Frameworks */,
 				3FB8E42F19317A7200B713CA /* CoreGraphics.framework in Frameworks */,
 				3FB8E43119317A7200B713CA /* UIKit.framework in Frameworks */,
 				3FB8E42D19317A7200B713CA /* Foundation.framework in Frameworks */,
@@ -147,9 +186,49 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		3F35278419341F4A00FF1A6F /* ZBarSDK */ = {
+			isa = PBXGroup;
+			children = (
+				3F35279119341F7200FF1A6F /* zbar */,
+				3F35279319341FB000FF1A6F /* ZBarCameraSimulator.h */,
+				3F35279419341FB000FF1A6F /* ZBarCaptureReader.h */,
+				3F35279519341FB000FF1A6F /* ZBarHelpController.h */,
+				3F35279619341FB000FF1A6F /* ZBarImage.h */,
+				3F35279719341FB000FF1A6F /* ZBarImageScanner.h */,
+				3F35279819341FB000FF1A6F /* ZBarReaderController.h */,
+				3F35279919341FB000FF1A6F /* ZBarReaderView.h */,
+				3F35279A19341FB000FF1A6F /* ZBarReaderViewController.h */,
+				3F35279B19341FB000FF1A6F /* ZBarSDK.h */,
+				3F35279C19341FB000FF1A6F /* ZBarSymbol.h */,
+				3F35279219341F9300FF1A6F /* zbar.h */,
+			);
+			name = ZBarSDK;
+			path = ../_vendors/ZBar/include/zbar;
+			sourceTree = "<group>";
+		};
+		3F35279119341F7200FF1A6F /* zbar */ = {
+			isa = PBXGroup;
+			children = (
+				3F35278519341F4A00FF1A6F /* Decoder.h */,
+				3F35278619341F4A00FF1A6F /* Exception.h */,
+				3F35278719341F4A00FF1A6F /* Image.h */,
+				3F35278819341F4A00FF1A6F /* ImageScanner.h */,
+				3F35278919341F4A00FF1A6F /* Processor.h */,
+				3F35278A19341F4A00FF1A6F /* QZBar.h */,
+				3F35278B19341F4A00FF1A6F /* QZBarImage.h */,
+				3F35278C19341F4A00FF1A6F /* Scanner.h */,
+				3F35278D19341F4A00FF1A6F /* Symbol.h */,
+				3F35278E19341F4A00FF1A6F /* Video.h */,
+				3F35278F19341F4A00FF1A6F /* Window.h */,
+				3F35279019341F4A00FF1A6F /* zbargtk.h */,
+			);
+			name = zbar;
+			sourceTree = "<group>";
+		};
 		3FB8E42019317A7200B713CA = {
 			isa = PBXGroup;
 			children = (
+				3F35278419341F4A00FF1A6F /* ZBarSDK */,
 				3F33733F1931833E0003790B /* ECSlidingViewController */,
 				3FB8E43219317A7200B713CA /* BitBadge */,
 				3FB8E45419317A7200B713CA /* BitBadgeTests */,
@@ -170,6 +249,13 @@
 		3FB8E42B19317A7200B713CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F3527821933FA4E00FF1A6F /* libiconv.dylib */,
+				3F3527801933FA4300FF1A6F /* Security.framework */,
+				3F35277E1933FA3000FF1A6F /* AVFoundation.framework */,
+				3F35277A1933FA2400FF1A6F /* CoreMedia.framework */,
+				3F35277B1933FA2400FF1A6F /* CoreVideo.framework */,
+				3F3527781933FA1A00FF1A6F /* QuartzCore.framework */,
+				3F3527761933F9E800FF1A6F /* libzbar.a */,
 				3FB8E42C19317A7200B713CA /* Foundation.framework */,
 				3FB8E42E19317A7200B713CA /* CoreGraphics.framework */,
 				3FB8E43019317A7200B713CA /* UIKit.framework */,
@@ -181,13 +267,11 @@
 		3FB8E43219317A7200B713CA /* BitBadge */ = {
 			isa = PBXGroup;
 			children = (
-				3F33735319318A920003790B /* Controllers */,
-				3F33735719318E7E0003790B /* Storyboards */,
 				3FB8E43B19317A7200B713CA /* AppDelegate.h */,
 				3FB8E43C19317A7200B713CA /* AppDelegate.m */,
-				3FB8E44419317A7200B713CA /* ViewController.h */,
-				3FB8E44519317A7200B713CA /* ViewController.m */,
 				3FB8E44719317A7200B713CA /* Images.xcassets */,
+				3F33735319318A920003790B /* Controllers */,
+				3F33735719318E7E0003790B /* Storyboards */,
 				3FB8E43319317A7200B713CA /* Supporting Files */,
 			);
 			path = BitBadge;
@@ -320,7 +404,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FB8E44619317A7200B713CA /* ViewController.m in Sources */,
 				3F33735E19318F280003790B /* MenuVC.m in Sources */,
 				3F3373521931833E0003790B /* UIViewController+ECSlidingViewController.m in Sources */,
 				3FB8E43D19317A7200B713CA /* AppDelegate.m in Sources */,
@@ -452,6 +535,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitBadge/BitBadge-Prefix.pch";
 				INFOPLIST_FILE = "BitBadge/BitBadge-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/csjones/GitHub/bitbadge/_vendors/ZBar/iphone/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -465,6 +552,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitBadge/BitBadge-Prefix.pch";
 				INFOPLIST_FILE = "BitBadge/BitBadge-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/csjones/GitHub/bitbadge/_vendors/ZBar/iphone/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
