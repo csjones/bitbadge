@@ -7,11 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "WalletManager.h"
+#import <CoreBitcoin/CoreBitcoin.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [WalletManager sharedInstance];
+    
+    //BTCKeychain <BTCKeychain:0x0x10a238c50 xpub661MyMwAqRbcEjxGaiCqG6jV5dJDuuhkV2JvnQbVs6cxNzTy6uDD9kQa6yQX1ENpKSrSWGXR5EFJUHpWNAPGg4jXJHrAYME7GWvuJUMSgRn>
+    
     // Override point for customization after application launch.
     return YES;
 }
