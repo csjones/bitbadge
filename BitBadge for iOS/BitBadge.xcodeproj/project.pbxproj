@@ -23,6 +23,12 @@
 		3F35277D1933FA2400FF1A6F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F35277B1933FA2400FF1A6F /* CoreVideo.framework */; };
 		3F35277F1933FA3000FF1A6F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F35277E1933FA3000FF1A6F /* AVFoundation.framework */; };
 		3F3527831933FA4E00FF1A6F /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3527821933FA4E00FF1A6F /* libiconv.dylib */; };
+		3F8E798A1936A3D7004993E8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3527801933FA4300FF1A6F /* Security.framework */; };
+		3F8E79961936A418004993E8 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F8E79901936A418004993E8 /* SSKeychain.strings */; };
+		3F8E79971936A418004993E8 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79931936A418004993E8 /* SSKeychain.m */; };
+		3F8E79981936A418004993E8 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79951936A418004993E8 /* SSKeychainQuery.m */; };
+		3F8E799C1936A485004993E8 /* WalletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E799B1936A485004993E8 /* WalletManager.m */; };
+		3F8E79A01936C7C1004993E8 /* NSDictionary+MasterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E799F1936C7C0004993E8 /* NSDictionary+MasterNode.m */; };
 		3FB8E42D19317A7200B713CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42C19317A7200B713CA /* Foundation.framework */; };
 		3FB8E42F19317A7200B713CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42E19317A7200B713CA /* CoreGraphics.framework */; };
 		3FB8E43119317A7200B713CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E43019317A7200B713CA /* UIKit.framework */; };
@@ -36,7 +42,6 @@
 		3FB8E45919317A7200B713CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FB8E45719317A7200B713CA /* InfoPlist.strings */; };
 		3FB8E45B19317A7200B713CA /* BitBadgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8E45A19317A7200B713CA /* BitBadgeTests.m */; };
 		3FDE0F291934485F00883C84 /* CoreBitcoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDE0F281934485F00883C84 /* CoreBitcoin.framework */; };
-		3FDE0F8E193453E800883C84 /* libCoreBitcoin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDE0F8D193453E800883C84 /* libCoreBitcoin.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +104,15 @@
 		3F35279A19341FB000FF1A6F /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarReaderViewController.h; path = ../../iphone/include/ZBarSDK/ZBarReaderViewController.h; sourceTree = "<group>"; };
 		3F35279B19341FB000FF1A6F /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarSDK.h; path = ../../iphone/include/ZBarSDK/ZBarSDK.h; sourceTree = "<group>"; };
 		3F35279C19341FB000FF1A6F /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBarSymbol.h; path = ../../iphone/include/ZBarSDK/ZBarSymbol.h; sourceTree = "<group>"; };
+		3F8E79911936A418004993E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SSKeychain.strings; sourceTree = "<group>"; };
+		3F8E79921936A418004993E8 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		3F8E79931936A418004993E8 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		3F8E79941936A418004993E8 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		3F8E79951936A418004993E8 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		3F8E799A1936A485004993E8 /* WalletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WalletManager.h; path = Managers/WalletManager.h; sourceTree = "<group>"; };
+		3F8E799B1936A485004993E8 /* WalletManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WalletManager.m; path = Managers/WalletManager.m; sourceTree = "<group>"; };
+		3F8E799E1936C7C0004993E8 /* NSDictionary+MasterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+MasterNode.h"; path = "Categories/NSDictionary+MasterNode.h"; sourceTree = "<group>"; };
+		3F8E799F1936C7C0004993E8 /* NSDictionary+MasterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+MasterNode.m"; path = "Categories/NSDictionary+MasterNode.m"; sourceTree = "<group>"; };
 		3FB8E42919317A7200B713CA /* BitBadge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitBadge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB8E42C19317A7200B713CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FB8E42E19317A7200B713CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -223,7 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FDE0F8E193453E800883C84 /* libCoreBitcoin.a in Frameworks */,
+				3F8E798A1936A3D7004993E8 /* Security.framework in Frameworks */,
 				3FDE0F291934485F00883C84 /* CoreBitcoin.framework in Frameworks */,
 				3F3527831933FA4E00FF1A6F /* libiconv.dylib in Frameworks */,
 				3F35277F1933FA3000FF1A6F /* AVFoundation.framework in Frameworks */,
@@ -330,6 +344,37 @@
 			name = zbar;
 			sourceTree = "<group>";
 		};
+		3F8E798F1936A418004993E8 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				3F8E79901936A418004993E8 /* SSKeychain.strings */,
+				3F8E79921936A418004993E8 /* SSKeychain.h */,
+				3F8E79931936A418004993E8 /* SSKeychain.m */,
+				3F8E79941936A418004993E8 /* SSKeychainQuery.h */,
+				3F8E79951936A418004993E8 /* SSKeychainQuery.m */,
+			);
+			name = SSKeychain;
+			path = ../_vendors/SSKeychain/SSKeychain;
+			sourceTree = "<group>";
+		};
+		3F8E79991936A430004993E8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3F8E799A1936A485004993E8 /* WalletManager.h */,
+				3F8E799B1936A485004993E8 /* WalletManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		3F8E799D1936C764004993E8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3F8E799E1936C7C0004993E8 /* NSDictionary+MasterNode.h */,
+				3F8E799F1936C7C0004993E8 /* NSDictionary+MasterNode.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		3FB8E42019317A7200B713CA = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +384,7 @@
 				3F33733F1931833E0003790B /* ECSlidingViewController */,
 				3FB8E42B19317A7200B713CA /* Frameworks */,
 				3FB8E42A19317A7200B713CA /* Products */,
+				3F8E798F1936A418004993E8 /* SSKeychain */,
 				3F35278419341F4A00FF1A6F /* ZBarSDK */,
 			);
 			sourceTree = "<group>";
@@ -380,7 +426,9 @@
 				3FB8E43B19317A7200B713CA /* AppDelegate.h */,
 				3FB8E43C19317A7200B713CA /* AppDelegate.m */,
 				3FB8E44719317A7200B713CA /* Images.xcassets */,
+				3F8E799D1936C764004993E8 /* Categories */,
 				3F33735319318A920003790B /* Controllers */,
+				3F8E79991936A430004993E8 /* Managers */,
 				3F33735719318E7E0003790B /* Storyboards */,
 				3FB8E43319317A7200B713CA /* Supporting Files */,
 			);
@@ -605,6 +653,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8E79961936A418004993E8 /* SSKeychain.strings in Resources */,
 				3F33735B19318ED40003790B /* Main_iPhone.storyboard in Resources */,
 				3F33735A19318ED40003790B /* Main_iPad.storyboard in Resources */,
 				3FB8E44819317A7200B713CA /* Images.xcassets in Resources */,
@@ -631,10 +680,14 @@
 				3F3373521931833E0003790B /* UIViewController+ECSlidingViewController.m in Sources */,
 				3FB8E43D19317A7200B713CA /* AppDelegate.m in Sources */,
 				3F33735619318E390003790B /* ScanVC.m in Sources */,
+				3F8E79981936A418004993E8 /* SSKeychainQuery.m in Sources */,
 				3F33734F1931833E0003790B /* ECSlidingInteractiveTransition.m in Sources */,
 				3F3373501931833E0003790B /* ECSlidingSegue.m in Sources */,
+				3F8E799C1936A485004993E8 /* WalletManager.m in Sources */,
+				3F8E79A01936C7C1004993E8 /* NSDictionary+MasterNode.m in Sources */,
 				3FB8E43919317A7200B713CA /* main.m in Sources */,
 				3F3373511931833E0003790B /* ECSlidingViewController.m in Sources */,
+				3F8E79971936A418004993E8 /* SSKeychain.m in Sources */,
 				3F33734E1931833E0003790B /* ECSlidingAnimationController.m in Sources */,
 				3F33734D1931833E0003790B /* ECPercentDrivenInteractiveTransition.m in Sources */,
 			);
@@ -659,6 +712,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3F8E79901936A418004993E8 /* SSKeychain.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F8E79911936A418004993E8 /* en */,
+			);
+			name = SSKeychain.strings;
+			sourceTree = "<group>";
+		};
 		3FB8E43519317A7200B713CA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
