@@ -14,3 +14,11 @@
 	path = _vendors/ECSlidingViewController
 	url = https://github.com/ECSlidingViewController/ECSlidingViewController
 	ignore = dirty
+[submodule "_vendors/SSKeychain"]
+	path = _vendors/SSKeychain
+	url = https://github.com/soffes/sskeychain
+	ignore = dirty
+[submodule "_vendors/CocoaSecurity"]
+	path = _vendors/CocoaSecurity
+	url = https://github.com/kelp404/CocoaSecurity
+	ignore = dirty
