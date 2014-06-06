@@ -8,14 +8,14 @@
 
 @interface NSDictionary ( MasterNode )
 
-- ( NSArray* )chain;
+- ( NSArray* )wallets;
+
+- ( NSDictionary* )info;
 
 - ( NSString* )nodeName;
 
 - ( NSNumber* )encrypted;
 
-- ( NSString* )encryptedSeed;
-
-- ( NSString* )decryptedSeed:( NSString* )key;
+- ( NSString* )seedWithKey:( NSString* )key;
 
 @end

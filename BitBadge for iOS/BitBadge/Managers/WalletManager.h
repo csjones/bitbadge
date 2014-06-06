@@ -13,12 +13,11 @@
 + ( id )sharedInstance;
 
 - ( void )addKeychainWithKey:( NSString* )key;
-- ( void )addKeychainWithSeed:( NSData* )seed
-                         name:( NSString* )name
-                    encrypted:( NSNumber* )encrypted
-                        chain:( NSArray* )chain;
 
 - ( void )removeKeychainWithKey:( NSString* )key;
 - ( void )removeKeychainWithSeed:( NSString* )seed;
+
+- ( void )addKeychainWithDictionary:( NSDictionary* )dictionary;
+- ( void )addKeychainWithSeed:( NSData* )seed name:( NSString* )name encrypted:( NSNumber* )encrypted chain:( NSArray* )chain;
 
 @end

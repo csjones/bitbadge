@@ -10,9 +10,14 @@
 
 @implementation NSDictionary ( MasterNode )
 
-- ( NSArray* )chain
+- ( NSArray* )wallets
 {
-    return self[ @"chain" ];
+    return self[ @"info" ][ @"wallets" ];
+}
+
+- ( NSDictionary* )info
+{
+    return self[ @"info" ];
 }
 
 - ( NSString* )nodeName
@@ -22,17 +27,15 @@
 
 - ( NSNumber* )encrypted
 {
-    return self[ @"encrypted" ];
+    return self[ @"info" ][ @"encrypted" ];
 }
 
-- ( NSString* )encryptedSeed
+- ( NSString* )seedWithKey:( NSString* )key
 {
-    return self[ @"seed" ];
-}
-
-- ( NSString* )decryptedSeed:( NSString* )key
-{
-    return self[ @"seed" ];
+    if ( [self.encrypted boolValue] )
+        return nil;
+    
+    return self[ @"info" ][ @"seed" ];
 }
 
 @end

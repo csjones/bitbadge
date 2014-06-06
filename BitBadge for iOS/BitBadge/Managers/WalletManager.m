@@ -8,6 +8,7 @@
 
 #import "BTCKey.h"
 #import "BTCBase58.h"
+#import "BTCAddress.h"
 #import "SSKeychain.h"
 #import "BTCKeychain.h"
 #import "WalletManager.h"
@@ -31,11 +32,30 @@
 {
     if ( self = [super init] )
     {
-        NSDictionary* keychain = @{ @"seed" : @"12", @"encrypted" : @0, @"name" : @"Master Node", @"chain" : @[] };
+//        NSDictionary* keychain = @{ @"name" : @"Master Node",
+//                                    @"info" : @{ @"encrypted" : @0, @"seed" : @"12",
+//                                                 @"wallets" : @[ @{ @"Sample Wallet One" : @[ @"Sample Address One", @"Sample Address Two" ], },
+//                                                                 @{ @"Sample Wallet Two" : @[ @"Sample Address One", @"Sample Address Two" ], }, ], }, };
+//        
+//        [self addKeychainWithDictionary:keychain];
+//        
+//        NSLog(@"BTCKeychain %@", [[BTCKeychain alloc] initWithSeed:[[keychain seedWithKey:nil] dataUsingEncoding:NSUTF8StringEncoding]]);
+//        
+//        [self writeToDeviceKeychain];
         
-        NSLog(@"BTCKeychain %@", [[BTCKeychain alloc] initWithSeed:[keychain.encryptedSeed dataUsingEncoding:NSUTF8StringEncoding]]);
+        [self readFromDeviceKeychain];
         
-        [self writeToDeviceKeychain];
+//        BTCKeychain* master = [[BTCKeychain alloc] initWithSeed:[[_keychains[0] seedWithKey:nil] dataUsingEncoding:NSUTF8StringEncoding]];
+//        
+//        BTCKeychain* derived = [master derivedKeychainAtIndex:0];
+//        
+//        for ( NSInteger i = 0; i < 10; i++)
+//        {
+//            BTCKey* derivedKey = [derived keyAtIndex:i];
+//            
+//            NSLog(@"publicKeyAddress %@", derivedKey.publicKeyAddress.base58String);
+//            NSLog(@"privateKeyAddress %@", derivedKey.privateKeyAddress.base58String);
+//        }
     }
     
     return self;
@@ -69,13 +89,23 @@
     
 }
 
-- ( void )addKeychainWithSeed:( NSData* )seed name:( NSString* )name encrypted:( NSNumber* )encrypted chain:( NSArray* )chain
+- ( void )addKeychainWithDictionary:( NSDictionary* )dictionary
 {
     NSMutableArray* updatedKeychains = _keychains.mutableCopy;
     
-    [updatedKeychains addObject:[[BTCKeychain alloc] initWithSeed:seed]];
+    if ( !updatedKeychains )
+        updatedKeychains = [[NSMutableArray alloc] initWithCapacity:1];
+    
+    [updatedKeychains addObject:dictionary];
     
     _keychains = [[NSArray alloc] initWithArray:updatedKeychains];
+}
+
+- ( void )addKeychainWithSeed:( NSData* )seed name:( NSString* )name encrypted:( NSNumber* )encrypted chain:( NSArray* )chain
+{
+    NSDictionary* keychain = [[NSDictionary alloc] initWithObjectsAndKeys:seed, @"seed", name, @"name", encrypted, @"encrypted", chain, @"chain", nil];
+    
+    [self addKeychainWithDictionary:keychain];
 }
 
 - ( void )removeKeychainWithKey:( NSString* )key
@@ -104,7 +134,7 @@
         
         query.service = self.service;
         query.account = weakMasterNode.nodeName;
-        query.password = weakMasterNode.encryptedSeed;
+        query.passwordObject = weakMasterNode.info;
         query.accessGroup = ( __bridge NSString* )kSecClassKey;
         
         NSError* error = nil;
@@ -119,17 +149,32 @@
     SSKeychainQuery* query = [[SSKeychainQuery alloc] init];
     
     query.service = [self service];
-//    query.account = name;
     query.accessGroup = ( __bridge NSString* )kSecClassKey;
     
     NSError* error = nil;
     
-    NSArray* walletKey = [query fetchAll:&error];
+    NSArray* masterNodes = [query fetchAll:&error];
     
-    NSLog(@"WalletKeys: %@", walletKey);
-    
-    if( !walletKey )
+    if( !masterNodes )
+    {
         NSLog(@"readFromDeviceKeychain Error: %@", error );
+        return;
+    }
+    
+    NSMutableArray* localKeychains = [[NSMutableArray alloc] init];
+    
+    for ( __weak NSDictionary* weakDictionary in masterNodes)
+    {
+        query.account = weakDictionary[ @"acct" ];
+        
+        [query fetch:&error];
+        
+        [localKeychains addObject:[[NSDictionary alloc] initWithObjectsAndKeys: query.account, @"name", query.passwordObject, @"info", nil]];
+    }
+    
+    _keychains = [[NSArray alloc] initWithArray:localKeychains];
+    
+    NSLog(@"_keychains %@", _keychains);
 }
 
 @end
