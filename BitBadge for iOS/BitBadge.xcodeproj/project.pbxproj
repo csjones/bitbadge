@@ -29,6 +29,8 @@
 		3F8E79981936A418004993E8 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79951936A418004993E8 /* SSKeychainQuery.m */; };
 		3F8E799C1936A485004993E8 /* WalletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E799B1936A485004993E8 /* WalletManager.m */; };
 		3F8E79A01936C7C1004993E8 /* NSDictionary+MasterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E799F1936C7C0004993E8 /* NSDictionary+MasterNode.m */; };
+		3F8E79A8193D6831004993E8 /* CocoaSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79A7193D6831004993E8 /* CocoaSecurity.m */; };
+		3F8E79AC193D6843004993E8 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79AB193D6843004993E8 /* Base64.m */; };
 		3FB8E42D19317A7200B713CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42C19317A7200B713CA /* Foundation.framework */; };
 		3FB8E42F19317A7200B713CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42E19317A7200B713CA /* CoreGraphics.framework */; };
 		3FB8E43119317A7200B713CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E43019317A7200B713CA /* UIKit.framework */; };
@@ -113,6 +115,10 @@
 		3F8E799B1936A485004993E8 /* WalletManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WalletManager.m; path = Managers/WalletManager.m; sourceTree = "<group>"; };
 		3F8E799E1936C7C0004993E8 /* NSDictionary+MasterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+MasterNode.h"; path = "Categories/NSDictionary+MasterNode.h"; sourceTree = "<group>"; };
 		3F8E799F1936C7C0004993E8 /* NSDictionary+MasterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+MasterNode.m"; path = "Categories/NSDictionary+MasterNode.m"; sourceTree = "<group>"; };
+		3F8E79A6193D6831004993E8 /* CocoaSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaSecurity.h; sourceTree = "<group>"; };
+		3F8E79A7193D6831004993E8 /* CocoaSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurity.m; sourceTree = "<group>"; };
+		3F8E79AA193D6843004993E8 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		3F8E79AB193D6843004993E8 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		3FB8E42919317A7200B713CA /* BitBadge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitBadge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB8E42C19317A7200B713CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FB8E42E19317A7200B713CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -375,11 +381,33 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		3F8E79A5193D6831004993E8 /* CocoaSecurity */ = {
+			isa = PBXGroup;
+			children = (
+				3F8E79A6193D6831004993E8 /* CocoaSecurity.h */,
+				3F8E79A7193D6831004993E8 /* CocoaSecurity.m */,
+			);
+			name = CocoaSecurity;
+			path = ../_vendors/CocoaSecurity/CocoaSecurity;
+			sourceTree = "<group>";
+		};
+		3F8E79A9193D6843004993E8 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				3F8E79AA193D6843004993E8 /* Base64.h */,
+				3F8E79AB193D6843004993E8 /* Base64.m */,
+			);
+			name = Base64;
+			path = ../_vendors/CocoaSecurity/submodules/Base64/Base64;
+			sourceTree = "<group>";
+		};
 		3FB8E42019317A7200B713CA = {
 			isa = PBXGroup;
 			children = (
+				3F8E79A9193D6843004993E8 /* Base64 */,
 				3FB8E43219317A7200B713CA /* BitBadge */,
 				3FB8E45419317A7200B713CA /* BitBadgeTests */,
+				3F8E79A5193D6831004993E8 /* CocoaSecurity */,
 				3FDE0F2A1934486600883C84 /* CoreBitcoin */,
 				3F33733F1931833E0003790B /* ECSlidingViewController */,
 				3FB8E42B19317A7200B713CA /* Frameworks */,
@@ -684,7 +712,9 @@
 				3F33734F1931833E0003790B /* ECSlidingInteractiveTransition.m in Sources */,
 				3F3373501931833E0003790B /* ECSlidingSegue.m in Sources */,
 				3F8E799C1936A485004993E8 /* WalletManager.m in Sources */,
+				3F8E79AC193D6843004993E8 /* Base64.m in Sources */,
 				3F8E79A01936C7C1004993E8 /* NSDictionary+MasterNode.m in Sources */,
+				3F8E79A8193D6831004993E8 /* CocoaSecurity.m in Sources */,
 				3FB8E43919317A7200B713CA /* main.m in Sources */,
 				3F3373511931833E0003790B /* ECSlidingViewController.m in Sources */,
 				3F8E79971936A418004993E8 /* SSKeychain.m in Sources */,
