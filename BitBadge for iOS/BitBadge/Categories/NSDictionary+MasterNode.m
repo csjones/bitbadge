@@ -38,4 +38,24 @@
     return self[ @"info" ][ @"seed" ];
 }
 
+- ( NSDictionary* )walletAtIndex:( NSInteger )index
+{
+    return self[ @"info" ][ @"wallets" ][ index ];
+}
+
+- ( NSString* )walletNameAtIndex:( NSInteger )index
+{
+    return [self walletAtIndex:index].allKeys[ 0 ];
+}
+
+- ( NSArray* )addressesForWalletAtIndex:( NSInteger )index
+{
+    return [self walletAtIndex:index].allValues[ 0 ];
+}
+
+- ( NSString* )addressNameWithIndex:( NSInteger )address forWalletAtIndex:( NSInteger )wallet
+{
+    return [self walletAtIndex:wallet].allValues[ 0 ][ address ];
+}
+
 @end

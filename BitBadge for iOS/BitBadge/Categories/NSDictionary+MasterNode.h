@@ -18,4 +18,12 @@
 
 - ( NSString* )seedWithKey:( NSString* )key;
 
+- ( NSDictionary* )walletAtIndex:( NSInteger )index;
+
+- ( NSString* )walletNameAtIndex:( NSInteger )index;
+
+- ( NSArray* )addressesForWalletAtIndex:( NSInteger )index;
+
+- ( NSString* )addressNameWithIndex:( NSInteger )address forWalletAtIndex:( NSInteger )wallet;
+
 @end
