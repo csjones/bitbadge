@@ -45,6 +45,8 @@
         
         [self readFromDeviceKeychain];
         
+        _activeKeychain = @0;
+        
 //        BTCKeychain* master = [[BTCKeychain alloc] initWithSeed:[[_keychains[0] seedWithKey:nil] dataUsingEncoding:NSUTF8StringEncoding]];
 //        
 //        BTCKeychain* derived = [master derivedKeychainAtIndex:0];

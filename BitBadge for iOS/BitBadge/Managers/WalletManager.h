@@ -8,7 +8,8 @@
 
 @interface WalletManager : NSObject
 
-@property ( nonatomic, readonly ) NSArray*  keychains;
+@property   ( nonatomic, readonly ) NSNumber* activeKeychain;
+@property   ( nonatomic, readonly ) NSArray*  keychains;
 
 + ( id )sharedInstance;
 
