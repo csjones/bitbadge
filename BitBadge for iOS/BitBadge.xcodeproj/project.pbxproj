@@ -31,6 +31,7 @@
 		3F8E79A01936C7C1004993E8 /* NSDictionary+MasterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E799F1936C7C0004993E8 /* NSDictionary+MasterNode.m */; };
 		3F8E79A8193D6831004993E8 /* CocoaSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79A7193D6831004993E8 /* CocoaSecurity.m */; };
 		3F8E79AC193D6843004993E8 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79AB193D6843004993E8 /* Base64.m */; };
+		3F8E79B0194551F5004993E8 /* ScanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79AF194551F5004993E8 /* ScanModel.m */; };
 		3FB8E42D19317A7200B713CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42C19317A7200B713CA /* Foundation.framework */; };
 		3FB8E42F19317A7200B713CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42E19317A7200B713CA /* CoreGraphics.framework */; };
 		3FB8E43119317A7200B713CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E43019317A7200B713CA /* UIKit.framework */; };
@@ -119,6 +120,8 @@
 		3F8E79A7193D6831004993E8 /* CocoaSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurity.m; sourceTree = "<group>"; };
 		3F8E79AA193D6843004993E8 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		3F8E79AB193D6843004993E8 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		3F8E79AE194551F5004993E8 /* ScanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanModel.h; path = Models/ScanModel.h; sourceTree = "<group>"; };
+		3F8E79AF194551F5004993E8 /* ScanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanModel.m; path = Models/ScanModel.m; sourceTree = "<group>"; };
 		3FB8E42919317A7200B713CA /* BitBadge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitBadge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB8E42C19317A7200B713CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FB8E42E19317A7200B713CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -401,6 +404,15 @@
 			path = ../_vendors/CocoaSecurity/submodules/Base64/Base64;
 			sourceTree = "<group>";
 		};
+		3F8E79AD194551C8004993E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F8E79AE194551F5004993E8 /* ScanModel.h */,
+				3F8E79AF194551F5004993E8 /* ScanModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		3FB8E42019317A7200B713CA = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +469,7 @@
 				3F8E799D1936C764004993E8 /* Categories */,
 				3F33735319318A920003790B /* Controllers */,
 				3F8E79991936A430004993E8 /* Managers */,
+				3F8E79AD194551C8004993E8 /* Models */,
 				3F33735719318E7E0003790B /* Storyboards */,
 				3FB8E43319317A7200B713CA /* Supporting Files */,
 			);
@@ -706,6 +719,7 @@
 			files = (
 				3F33735E19318F280003790B /* MenuVC.m in Sources */,
 				3F3373521931833E0003790B /* UIViewController+ECSlidingViewController.m in Sources */,
+				3F8E79B0194551F5004993E8 /* ScanModel.m in Sources */,
 				3FB8E43D19317A7200B713CA /* AppDelegate.m in Sources */,
 				3F33735619318E390003790B /* ScanVC.m in Sources */,
 				3F8E79981936A418004993E8 /* SSKeychainQuery.m in Sources */,
