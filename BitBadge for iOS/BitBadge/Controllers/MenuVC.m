@@ -7,14 +7,21 @@
 //
 
 #import "MenuVC.h"
+#import "WalletManager.h"
 #import "UIViewController+ECSlidingViewController.h"
 
 @implementation MenuVC
 
-- (void)viewDidLoad
+- ( void )viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
+    
     // Do any additional setup after loading the view.
+    WalletManager* walletManager = [WalletManager sharedInstance];
+    
+    _scanModel = [[ScanModel alloc] initWithActiveKeychain:walletManager.activeKeychain.integerValue];
+    
+    _weakTableView.dataSource = _scanModel;
 }
 
 - (void)didReceiveMemoryWarning

@@ -6,7 +6,12 @@
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
-@interface MenuVC : UIViewController
+#import "ScanModel.h"
+
+@interface MenuVC : UIViewController < UITableViewDelegate >
+
+@property   ( weak, nonatomic ) IBOutlet    UITableView*    weakTableView;
+@property   ( strong, nonatomic )           ScanModel*      scanModel;
 
 - (IBAction)didTapButton:(id)sender;
 
