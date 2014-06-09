@@ -114,6 +114,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="weakTableView" destination="xJI-Wz-qX4" id="bos-gb-JrM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Otz-et-uBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
