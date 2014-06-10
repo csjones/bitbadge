@@ -11,9 +11,13 @@
 @interface ScanVC : UIViewController < ZBarReaderViewDelegate >
 {
     __weak NSOperationQueue *_weakMainQueue;
+    
+    BOOL _didScanCode;
 }
 
 @property ( weak, nonatomic ) IBOutlet ZBarReaderView *weakReaderView;
+
+@property ( strong, nonatomic ) NSString* challenge;
 
 - ( IBAction )didTapButton:( id )sender;
 

@@ -49,6 +49,8 @@
 		3F8E79E51946945A004993E8 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79DB1946945A004993E8 /* UIProgressView+AFNetworking.m */; };
 		3F8E79E61946945A004993E8 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79DD1946945A004993E8 /* UIRefreshControl+AFNetworking.m */; };
 		3F8E79E71946945A004993E8 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79DF1946945A004993E8 /* UIWebView+AFNetworking.m */; };
+		3F8E79EA194694CF004993E8 /* BitID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79E9194694CF004993E8 /* BitID.m */; };
+		3F8E79ED19469ECA004993E8 /* ConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79EC19469ECA004993E8 /* ConfirmVC.m */; };
 		3FB8E42D19317A7200B713CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42C19317A7200B713CA /* Foundation.framework */; };
 		3FB8E42F19317A7200B713CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42E19317A7200B713CA /* CoreGraphics.framework */; };
 		3FB8E43119317A7200B713CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E43019317A7200B713CA /* UIKit.framework */; };
@@ -175,6 +177,10 @@
 		3F8E79DD1946945A004993E8 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		3F8E79DE1946945A004993E8 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		3F8E79DF1946945A004993E8 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		3F8E79E8194694CF004993E8 /* BitID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BitID.h; path = Managers/BitID.h; sourceTree = "<group>"; };
+		3F8E79E9194694CF004993E8 /* BitID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BitID.m; path = Managers/BitID.m; sourceTree = "<group>"; };
+		3F8E79EB19469ECA004993E8 /* ConfirmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfirmVC.h; path = Controllers/ConfirmVC.h; sourceTree = "<group>"; };
+		3F8E79EC19469ECA004993E8 /* ConfirmVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfirmVC.m; path = Controllers/ConfirmVC.m; sourceTree = "<group>"; };
 		3FB8E42919317A7200B713CA /* BitBadge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitBadge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB8E42C19317A7200B713CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FB8E42E19317A7200B713CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -354,6 +360,8 @@
 				3F33735519318E390003790B /* ScanVC.m */,
 				3F33735C19318F280003790B /* MenuVC.h */,
 				3F33735D19318F280003790B /* MenuVC.m */,
+				3F8E79EB19469ECA004993E8 /* ConfirmVC.h */,
+				3F8E79EC19469ECA004993E8 /* ConfirmVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -422,6 +430,8 @@
 		3F8E79991936A430004993E8 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				3F8E79E8194694CF004993E8 /* BitID.h */,
+				3F8E79E9194694CF004993E8 /* BitID.m */,
 				3F8E799A1936A485004993E8 /* WalletManager.h */,
 				3F8E799B1936A485004993E8 /* WalletManager.m */,
 			);
@@ -825,6 +835,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F8E79E51946945A004993E8 /* UIProgressView+AFNetworking.m in Sources */,
+				3F8E79ED19469ECA004993E8 /* ConfirmVC.m in Sources */,
 				3F8E79E41946945A004993E8 /* UIImageView+AFNetworking.m in Sources */,
 				3F8E79C51946944B004993E8 /* AFHTTPRequestOperation.m in Sources */,
 				3F33735E19318F280003790B /* MenuVC.m in Sources */,
@@ -847,6 +858,7 @@
 				3F8E79CA1946944B004993E8 /* AFURLConnectionOperation.m in Sources */,
 				3F8E79CC1946944B004993E8 /* AFURLResponseSerialization.m in Sources */,
 				3F8E79A01936C7C1004993E8 /* NSDictionary+MasterNode.m in Sources */,
+				3F8E79EA194694CF004993E8 /* BitID.m in Sources */,
 				3F8E79CB1946944B004993E8 /* AFURLRequestSerialization.m in Sources */,
 				3F8E79A8193D6831004993E8 /* CocoaSecurity.m in Sources */,
 				3FB8E43919317A7200B713CA /* main.m in Sources */,

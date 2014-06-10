@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
+#import "BitID.h"
 #import "ScanVC.h"
+#import "ConfirmVC.h"
 #import "ZBarImage.h"
 #import "ZBarImageScanner.h"
 #import "UIViewController+ECSlidingViewController.h"
@@ -19,6 +21,8 @@
     {
         if ( !_weakReaderView )
         {
+            _didScanCode = NO;
+            
             _weakMainQueue = [NSOperationQueue mainQueue];
             
             [_weakMainQueue addOperationWithBlock:^{
@@ -78,6 +82,13 @@
     return self;
 }
 
+- ( void )viewWillAppear:( BOOL )animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   ZBarReaderViewDelegate
 
@@ -91,15 +102,41 @@
 
 - ( void )readerView:( ZBarReaderView* )readerView didReadSymbols:( ZBarSymbolSet* )symbols fromImage:( UIImage* )image
 {
-//    if( !_didScanCode )
-//    {
-//        _didScanCode = TRUE;
-//        
-//        NSString    *address = @"";
-//        
-//        for(ZBarSymbol *symbol in symbols)
-//            address = symbol.data;
-//        
+    if( !_didScanCode )
+    {
+        _didScanCode = TRUE;
+
+        NSString* challenge = @"";
+        
+        for( __weak ZBarSymbol *symbol in symbols )
+            challenge = symbol.data;
+        
+        if ( ![challenge hasPrefix:@"bitid://"] )
+        {
+            _didScanCode = FALSE;
+            
+            return;
+        }
+        
+        __weak ScanVC* weakSelf = self;
+        
+        __weak ECSlidingViewController* weakSlidingViewController = self.slidingViewController;
+        
+        [self.slidingViewController anchorTopViewToRightAnimated:YES
+                                                      onComplete:^{
+                                                          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                                                              ConfirmVC* confirmVC = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"Confirm"];
+                                                              
+                                                              confirmVC.bitIdModel = [[BitID alloc] initWithChallenge:challenge];
+                                                              
+                                                              weakSlidingViewController.topViewController = confirmVC;
+                                                              
+                                                              [weakSlidingViewController resetTopViewAnimated:YES];
+                                                              
+                                                              NSLog(@"weakSlidingViewController %@", weakSlidingViewController);
+                                                          });
+                                                     }];
+//
 //        ScanOptionsVC *scanOptionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Options"];
 //        
 //        scanOptionsVC.scannedAddress = address;
@@ -108,7 +145,7 @@
 //            self.slidingViewController.underRightViewController = scanOptionsVC;
 //        
 //        [self.slidingViewController anchorTopViewTo:ECLeft];
-//    }
+    }
 }
 
 @end
