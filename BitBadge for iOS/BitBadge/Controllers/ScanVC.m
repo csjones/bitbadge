@@ -21,7 +21,7 @@
     {
         if ( !_weakReaderView )
         {
-            _didScanCode = NO;
+            _didScanCode = TRUE;
             
             _weakMainQueue = [NSOperationQueue mainQueue];
             
@@ -86,11 +86,20 @@
 {
     [super viewWillAppear:animated];
     
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    
+    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGesturePanning;
+}
+
+- ( void )viewDidAppear:( BOOL )animated
+{
+    [super viewDidAppear:animated];
+    
+    _didScanCode = FALSE;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark    -   ZBarReaderViewDelegate
+#pragma mark    -   IBActions
 
 - ( IBAction )didTapButton:( id )sender
 {
@@ -102,50 +111,35 @@
 
 - ( void )readerView:( ZBarReaderView* )readerView didReadSymbols:( ZBarSymbolSet* )symbols fromImage:( UIImage* )image
 {
-    if( !_didScanCode )
-    {
-        _didScanCode = TRUE;
+    if( _didScanCode )
+        return;
+    
+    _didScanCode = TRUE;
 
-        NSString* challenge = @"";
+    NSString* challenge = @"";
+    
+    for( __weak ZBarSymbol *symbol in symbols )
+        challenge = symbol.data;
+    
+    if ( ![challenge hasPrefix:@"bitid://"] )
+    {
+        _didScanCode = FALSE;
         
-        for( __weak ZBarSymbol *symbol in symbols )
-            challenge = symbol.data;
-        
-        if ( ![challenge hasPrefix:@"bitid://"] )
-        {
-            _didScanCode = FALSE;
-            
-            return;
-        }
-        
-        __weak ScanVC* weakSelf = self;
-        
-        __weak ECSlidingViewController* weakSlidingViewController = self.slidingViewController;
-        
-        [self.slidingViewController anchorTopViewToRightAnimated:YES
-                                                      onComplete:^{
-                                                          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                                                              ConfirmVC* confirmVC = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"Confirm"];
-                                                              
-                                                              confirmVC.bitIdModel = [[BitID alloc] initWithChallenge:challenge];
-                                                              
-                                                              weakSlidingViewController.topViewController = confirmVC;
-                                                              
-                                                              [weakSlidingViewController resetTopViewAnimated:YES];
-                                                              
-                                                              NSLog(@"weakSlidingViewController %@", weakSlidingViewController);
-                                                          });
-                                                     }];
-//
-//        ScanOptionsVC *scanOptionsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Options"];
-//        
-//        scanOptionsVC.scannedAddress = address;
-//        
-//        if (![self.slidingViewController.underRightViewController isKindOfClass:[ScanOptionsVC class]])
-//            self.slidingViewController.underRightViewController = scanOptionsVC;
-//        
-//        [self.slidingViewController anchorTopViewTo:ECLeft];
+        return;
     }
+    
+    __weak ScanVC* weakSelf = self;
+    
+    NSLog(@"%@", challenge);
+    
+    [self.slidingViewController resetTopViewAnimated:YES];
+    
+    ConfirmVC* confirmVC = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"Confirm"];
+    
+    confirmVC.bitIdModel = [[BitID alloc] initWithChallenge:challenge];
+    
+    if ( confirmVC.bitIdModel )
+        [weakSelf.navigationController pushViewController:confirmVC animated:YES];
 }
 
 @end

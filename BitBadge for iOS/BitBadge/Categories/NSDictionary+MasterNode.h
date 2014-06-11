@@ -24,6 +24,10 @@
 
 - ( NSArray* )addressesForWalletAtIndex:( NSInteger )index;
 
+- ( NSString* )publicKeyAtIndex:( NSInteger )address withWalletIndex:( NSInteger )wallet;
+
 - ( NSString* )addressNameWithIndex:( NSInteger )address forWalletAtIndex:( NSInteger )wallet;
+
+- ( NSData* )sign:( NSString* )message addressAtIndex:( NSInteger )address withWalletIndex:( NSInteger )wallet;
 
 @end

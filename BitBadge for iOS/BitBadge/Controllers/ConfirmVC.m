@@ -14,11 +14,28 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   UIViewController
 
-- ( void )viewWillAppear:( BOOL )animated
+- ( void )viewDidAppear:( BOOL )animated
 {
-    [super viewWillAppear:animated];
+    [super viewDidAppear:animated];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   IBActions
+
+
+- ( IBAction )didPressButton:( id )sender
+{
+    __weak UIButton* weakButton = sender;
     
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    switch ( weakButton.tag )
+    {
+        default:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+        case 1:
+            [_bitIdModel signChallenge];
+            break;
+    }
 }
 
 @end

@@ -32,16 +32,16 @@
 {
     if ( self = [super init] )
     {
-//        NSDictionary* keychain = @{ @"name" : @"Master Node",
-//                                    @"info" : @{ @"encrypted" : @0, @"seed" : @"12",
-//                                                 @"wallets" : @[ @{ @"Sample Wallet One" : @[ @"Sample Address One", @"Sample Address Two" ], },
-//                                                                 @{ @"Sample Wallet Two" : @[ @"Sample Address One", @"Sample Address Two" ], }, ], }, };
-//        
-//        [self addKeychainWithDictionary:keychain];
-//        
-//        NSLog(@"BTCKeychain %@", [[BTCKeychain alloc] initWithSeed:[[keychain seedWithKey:nil] dataUsingEncoding:NSUTF8StringEncoding]]);
-//        
-//        [self writeToDeviceKeychain];
+        NSDictionary* keychain = @{ @"name" : @"Master Node",
+                                    @"info" : @{ @"encrypted" : @0, @"seed" : @"12",
+                                                 @"wallets" : @[ @{ @"Sample Wallet One" : @[ @"Sample Address One", @"Sample Address Two" ], },
+                                                                 @{ @"Sample Wallet Two" : @[ @"Sample Address One", @"Sample Address Two" ], }, ], }, };
+        
+        [self addKeychainWithDictionary:keychain];
+        
+        NSLog(@"BTCKeychain %@", [[BTCKeychain alloc] initWithSeed:[[keychain seedWithKey:nil] dataUsingEncoding:NSUTF8StringEncoding]]);
+        
+        [self writeToDeviceKeychain];
         
         [self readFromDeviceKeychain];
         

@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
+#import "BTCKey.h"
+#import "BTCAddress.h"
+#import "BTCKeychain.h"
 #import "NSDictionary+MasterNode.h"
 
 @implementation NSDictionary ( MasterNode )
@@ -53,9 +56,31 @@
     return [self walletAtIndex:index].allValues[ 0 ];
 }
 
+- ( NSString* )publicKeyAtIndex:( NSInteger )address withWalletIndex:( NSInteger )wallet
+{
+    BTCKeychain* masterNode = [[BTCKeychain alloc] initWithSeed:[[self seedWithKey:nil] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    BTCKeychain* derivedWallet = [masterNode derivedKeychainAtIndex:wallet];
+    
+    BTCKey* derivedAddress = [derivedWallet keyAtIndex:address];
+    
+    return derivedAddress.publicKeyAddress.base58String;
+}
+
 - ( NSString* )addressNameWithIndex:( NSInteger )address forWalletAtIndex:( NSInteger )wallet
 {
     return [self walletAtIndex:wallet].allValues[ 0 ][ address ];
+}
+
+- ( NSData* )sign:( NSString* )message addressAtIndex:( NSInteger )address withWalletIndex:( NSInteger )wallet
+{
+    BTCKeychain* masterNode = [[BTCKeychain alloc] initWithSeed:[[self seedWithKey:nil] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    BTCKeychain* derivedWallet = [masterNode derivedKeychainAtIndex:wallet];
+    
+    BTCKey* derivedAddress = [derivedWallet keyAtIndex:address];
+    
+    return [derivedAddress signatureForMessage:message];
 }
 
 @end
