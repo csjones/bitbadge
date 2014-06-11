@@ -51,7 +51,7 @@
     
     NSLog(@"url.path %@", url.path);
     
-    NSData* signature = [self.walletManager.keychains[ 0 ] sign:@"Holla" addressAtIndex:0 withWalletIndex:0];
+    NSData* signature = [self.walletManager.keychains[ 0 ] sign:_challenge addressAtIndex:0 withWalletIndex:0];
     
     NSDictionary* params = [[NSDictionary alloc] initWithObjectsAndKeys: _challenge, @"uri",
                                                                         [self.walletManager.keychains[ 0 ] publicKeyAtIndex:0 withWalletIndex:0], @"address",
@@ -66,7 +66,6 @@
        }
        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
            NSLog(@"failure %@", error);
-           NSLog(@"operation %@", operation);
        }];
 }
 
