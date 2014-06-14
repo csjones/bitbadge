@@ -12,25 +12,34 @@
 
 @implementation MenuVC
 
-- ( void )viewWillAppear:(BOOL)animated
+- ( id )initWithCoder:( NSCoder* )aDecoder
+{
+    if( self = [super initWithCoder:aDecoder] )
+    {
+        
+    }
+    
+    return self;
+}
+
+- ( void )viewWillAppear:( BOOL )animated
 {
     [super viewWillAppear:animated];
     
     // Do any additional setup after loading the view.
-    WalletManager* walletManager = [WalletManager sharedInstance];
-    
-    _scanModel = [[ScanModel alloc] initWithActiveKeychain:walletManager.activeKeychain.integerValue];
-    
-    _weakTableView.dataSource = _scanModel;
+    if( !_menuTableModel )
+    {
+        WalletManager* walletManager = [WalletManager sharedInstance];
+        
+        _menuTableModel = [[MenuTableModel alloc] initWithActiveKeychain:walletManager.activeKeychain.integerValue];
+        
+        _weakMenuTableView.dataSource = _menuTableModel;
+        
+        [_weakMenuTableView reloadData];
+    }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)didTapButton:(id)sender
+- ( IBAction )didTapButton:( id )sender
 {
     // This undoes the Zoom Transition's scale because it affects the other transitions.
     // You normally wouldn't need to do anything like this, but we're changing transitions
@@ -42,15 +51,25 @@
     [self.slidingViewController resetTopViewAnimated:YES];
 }
 
-/*
-#pragma mark - Navigation
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   UITableViewDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- ( void )tableView:( UITableView* )tableView didSelectRowAtIndexPath:( NSIndexPath* )indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ( indexPath.row )
+    {
+        
+    }
+    else
+    {
+        NSMutableArray* newHeaders = [_menuTableModel.sectionHeaders mutableCopy];
+        
+        newHeaders[ indexPath.section ] = [[NSNumber alloc] initWithBool:![newHeaders[ indexPath.section ] boolValue]];
+        
+        _menuTableModel.sectionHeaders = [[NSArray alloc] initWithArray:newHeaders];
+        
+        [tableView reloadSections:[[NSIndexSet alloc] initWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
-*/
 
 @end

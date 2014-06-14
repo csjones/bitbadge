@@ -110,22 +110,25 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="ybY-dB-628" id="sOH-MP-Ncb"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="weakTableView" destination="xJI-Wz-qX4" id="bos-gb-JrM"/>
+                        <outlet property="weakMenuTableView" destination="xJI-Wz-qX4" id="hgv-bu-48t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Otz-et-uBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="477" y="246"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--NavVC-->
         <scene sceneID="L9f-AN-HER">
             <objects>
-                <navigationController storyboardIdentifier="Nav" definesPresentationContext="YES" navigationBarHidden="YES" id="o6a-vu-tYW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nav" definesPresentationContext="YES" navigationBarHidden="YES" id="o6a-vu-tYW" customClass="NavVC" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2F4-29-iDb">
                         <autoresizingMask key="autoresizingMask"/>
