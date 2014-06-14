@@ -31,7 +31,6 @@
 		3F8E79A01936C7C1004993E8 /* NSDictionary+MasterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E799F1936C7C0004993E8 /* NSDictionary+MasterNode.m */; };
 		3F8E79A8193D6831004993E8 /* CocoaSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79A7193D6831004993E8 /* CocoaSecurity.m */; };
 		3F8E79AC193D6843004993E8 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79AB193D6843004993E8 /* Base64.m */; };
-		3F8E79B0194551F5004993E8 /* ScanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79AF194551F5004993E8 /* ScanModel.m */; };
 		3F8E79C51946944B004993E8 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79B31946944B004993E8 /* AFHTTPRequestOperation.m */; };
 		3F8E79C61946944B004993E8 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79B51946944B004993E8 /* AFHTTPRequestOperationManager.m */; };
 		3F8E79C71946944B004993E8 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79B71946944B004993E8 /* AFHTTPSessionManager.m */; };
@@ -51,6 +50,8 @@
 		3F8E79E71946945A004993E8 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79DF1946945A004993E8 /* UIWebView+AFNetworking.m */; };
 		3F8E79EA194694CF004993E8 /* BitID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79E9194694CF004993E8 /* BitID.m */; };
 		3F8E79ED19469ECA004993E8 /* ConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79EC19469ECA004993E8 /* ConfirmVC.m */; };
+		3F8E79FA194C1375004993E8 /* NavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79F9194C1375004993E8 /* NavVC.m */; };
+		3F8E79FD194C1C15004993E8 /* MenuTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79FC194C1C15004993E8 /* MenuTableModel.m */; };
 		3FB8E42D19317A7200B713CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42C19317A7200B713CA /* Foundation.framework */; };
 		3FB8E42F19317A7200B713CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42E19317A7200B713CA /* CoreGraphics.framework */; };
 		3FB8E43119317A7200B713CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E43019317A7200B713CA /* UIKit.framework */; };
@@ -139,8 +140,6 @@
 		3F8E79A7193D6831004993E8 /* CocoaSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurity.m; sourceTree = "<group>"; };
 		3F8E79AA193D6843004993E8 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		3F8E79AB193D6843004993E8 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
-		3F8E79AE194551F5004993E8 /* ScanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanModel.h; path = Models/ScanModel.h; sourceTree = "<group>"; };
-		3F8E79AF194551F5004993E8 /* ScanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanModel.m; path = Models/ScanModel.m; sourceTree = "<group>"; };
 		3F8E79B21946944B004993E8 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		3F8E79B31946944B004993E8 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		3F8E79B41946944B004993E8 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -181,6 +180,10 @@
 		3F8E79E9194694CF004993E8 /* BitID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BitID.m; path = Managers/BitID.m; sourceTree = "<group>"; };
 		3F8E79EB19469ECA004993E8 /* ConfirmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfirmVC.h; path = Controllers/ConfirmVC.h; sourceTree = "<group>"; };
 		3F8E79EC19469ECA004993E8 /* ConfirmVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfirmVC.m; path = Controllers/ConfirmVC.m; sourceTree = "<group>"; };
+		3F8E79F8194C1375004993E8 /* NavVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavVC.h; path = Controllers/NavVC.h; sourceTree = "<group>"; };
+		3F8E79F9194C1375004993E8 /* NavVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavVC.m; path = Controllers/NavVC.m; sourceTree = "<group>"; };
+		3F8E79FB194C1C15004993E8 /* MenuTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableModel.h; path = Models/MenuTableModel.h; sourceTree = "<group>"; };
+		3F8E79FC194C1C15004993E8 /* MenuTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableModel.m; path = Models/MenuTableModel.m; sourceTree = "<group>"; };
 		3FB8E42919317A7200B713CA /* BitBadge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitBadge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB8E42C19317A7200B713CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FB8E42E19317A7200B713CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -356,6 +359,8 @@
 		3F33735319318A920003790B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F8E79F8194C1375004993E8 /* NavVC.h */,
+				3F8E79F9194C1375004993E8 /* NavVC.m */,
 				3F33735419318E390003790B /* ScanVC.h */,
 				3F33735519318E390003790B /* ScanVC.m */,
 				3F33735C19318F280003790B /* MenuVC.h */,
@@ -470,8 +475,8 @@
 		3F8E79AD194551C8004993E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3F8E79AE194551F5004993E8 /* ScanModel.h */,
-				3F8E79AF194551F5004993E8 /* ScanModel.m */,
+				3F8E79FB194C1C15004993E8 /* MenuTableModel.h */,
+				3F8E79FC194C1C15004993E8 /* MenuTableModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -840,7 +845,6 @@
 				3F8E79C51946944B004993E8 /* AFHTTPRequestOperation.m in Sources */,
 				3F33735E19318F280003790B /* MenuVC.m in Sources */,
 				3F3373521931833E0003790B /* UIViewController+ECSlidingViewController.m in Sources */,
-				3F8E79B0194551F5004993E8 /* ScanModel.m in Sources */,
 				3FB8E43D19317A7200B713CA /* AppDelegate.m in Sources */,
 				3F33735619318E390003790B /* ScanVC.m in Sources */,
 				3F8E79E11946945A004993E8 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -861,11 +865,13 @@
 				3F8E79EA194694CF004993E8 /* BitID.m in Sources */,
 				3F8E79CB1946944B004993E8 /* AFURLRequestSerialization.m in Sources */,
 				3F8E79A8193D6831004993E8 /* CocoaSecurity.m in Sources */,
+				3F8E79FA194C1375004993E8 /* NavVC.m in Sources */,
 				3FB8E43919317A7200B713CA /* main.m in Sources */,
 				3F3373511931833E0003790B /* ECSlidingViewController.m in Sources */,
 				3F8E79971936A418004993E8 /* SSKeychain.m in Sources */,
 				3F33734E1931833E0003790B /* ECSlidingAnimationController.m in Sources */,
 				3F8E79E31946945A004993E8 /* UIButton+AFNetworking.m in Sources */,
+				3F8E79FD194C1C15004993E8 /* MenuTableModel.m in Sources */,
 				3F8E79E61946945A004993E8 /* UIRefreshControl+AFNetworking.m in Sources */,
 				3F8E79C61946944B004993E8 /* AFHTTPRequestOperationManager.m in Sources */,
 				3F8E79C91946944B004993E8 /* AFSecurityPolicy.m in Sources */,

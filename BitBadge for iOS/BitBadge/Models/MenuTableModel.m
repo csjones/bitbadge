@@ -1,22 +1,29 @@
 //
-//  ScanModel.m
+//  MenuTableModel.m
 //  BitBadge
 //
-//  Created by Chris on 6/8/14.
+//  Created by Chris on 6/14/14.
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
-#import "ScanModel.h"
 #import "WalletManager.h"
+#import "MenuTableModel.h"
 #import "NSDictionary+MasterNode.h"
 
-@implementation ScanModel
+@implementation MenuTableModel
 
 - ( id )initWithActiveKeychain:( NSUInteger )integer
 {
     if ( self = [super init] )
     {
         _weakWalletManager = [WalletManager sharedInstance];
+        
+        NSMutableArray* newHeaders = [[NSMutableArray alloc] init];
+        
+        for( NSUInteger i = 0; i < [_weakWalletManager.keychains[ _activeInteger ] wallets].count; i++ )
+            [newHeaders addObject:@0];
+        
+        _sectionHeaders = [[NSArray alloc] initWithArray:newHeaders];
         
         _activeInteger = integer;
     }
@@ -34,6 +41,9 @@
 
 - ( NSInteger )tableView:( UITableView* )tableView numberOfRowsInSection:( NSInteger )section
 {
+    if( ![_sectionHeaders[ section ] boolValue] )
+        return 1;
+    
     return [_weakWalletManager.keychains[ _activeInteger ] addressesForWalletAtIndex:section].count + 1;
 }
 
