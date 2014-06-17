@@ -8,6 +8,8 @@
 
 #import "ZBarSDK.h"
 
+@class WalletManager;
+
 @interface ScanVC : UIViewController < ZBarReaderViewDelegate >
 {
     __weak NSOperationQueue *_weakMainQueue;
@@ -16,6 +18,8 @@
 }
 
 @property ( weak, nonatomic ) IBOutlet ZBarReaderView *weakReaderView;
+
+@property ( weak, nonatomic) WalletManager* walletManager;
 
 @property ( strong, nonatomic ) NSString* challenge;
 

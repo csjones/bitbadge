@@ -11,6 +11,7 @@
 #import "ConfirmVC.h"
 #import "ZBarImage.h"
 #import "ZBarImageScanner.h"
+#import "WalletManager+HelperMethods.h"
 #import "UIViewController+ECSlidingViewController.h"
 
 @implementation ScanVC
@@ -24,6 +25,8 @@
             _didScanCode = TRUE;
             
             _weakMainQueue = [NSOperationQueue mainQueue];
+            
+            _walletManager = [WalletManager sharedInstance];
             
             [_weakMainQueue addOperationWithBlock:^{
                 ZBarImageScanner *scanner = [[ZBarImageScanner alloc] init];
@@ -130,16 +133,31 @@
     
     __weak ScanVC* weakSelf = self;
     
-    NSLog(@"%@", challenge);
-    
     [self.slidingViewController resetTopViewAnimated:YES];
     
-    ConfirmVC* confirmVC = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"Confirm"];
+    NSUInteger num =[_walletManager numberOfMatchesForString:[[[NSURL alloc] initWithString:challenge] host]];
     
-    confirmVC.bitIdModel = [[BitID alloc] initWithChallenge:challenge];
+    ConfirmVC* nextVC = nil;
     
-    if ( confirmVC.bitIdModel )
-        [weakSelf.navigationController pushViewController:confirmVC animated:YES];
+    switch ( num )
+    {
+        default:
+            nextVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Multi Match"];
+            break;
+        case 0:
+            nextVC = [self.storyboard instantiateViewControllerWithIdentifier:@"No Match"];
+            break;
+        case 1:
+            nextVC = [self.storyboard instantiateViewControllerWithIdentifier:@"One Match"];
+            break;
+    }
+    
+//    ConfirmVC* confirmVC = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"Confirm"];
+    
+    nextVC.bitIdModel = [[BitID alloc] initWithChallenge:challenge];
+    
+    if ( nextVC.bitIdModel )
+        [weakSelf.navigationController pushViewController:nextVC animated:YES];
 }
 
 @end
