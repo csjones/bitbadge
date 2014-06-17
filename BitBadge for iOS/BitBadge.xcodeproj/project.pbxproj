@@ -52,6 +52,10 @@
 		3F8E79ED19469ECA004993E8 /* ConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79EC19469ECA004993E8 /* ConfirmVC.m */; };
 		3F8E79FA194C1375004993E8 /* NavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79F9194C1375004993E8 /* NavVC.m */; };
 		3F8E79FD194C1C15004993E8 /* MenuTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79FC194C1C15004993E8 /* MenuTableModel.m */; };
+		3F8E7A00194E88AF004993E8 /* NoMatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E79FF194E88AE004993E8 /* NoMatchVC.m */; };
+		3F8E7A03194E8908004993E8 /* OneMatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E7A02194E8908004993E8 /* OneMatchVC.m */; };
+		3F8E7A06194E898D004993E8 /* MultiMatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E7A05194E898D004993E8 /* MultiMatchVC.m */; };
+		3F8E7A09194E8F16004993E8 /* WalletManager+HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8E7A08194E8F16004993E8 /* WalletManager+HelperMethods.m */; };
 		3FB8E42D19317A7200B713CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42C19317A7200B713CA /* Foundation.framework */; };
 		3FB8E42F19317A7200B713CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E42E19317A7200B713CA /* CoreGraphics.framework */; };
 		3FB8E43119317A7200B713CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB8E43019317A7200B713CA /* UIKit.framework */; };
@@ -184,6 +188,14 @@
 		3F8E79F9194C1375004993E8 /* NavVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavVC.m; path = Controllers/NavVC.m; sourceTree = "<group>"; };
 		3F8E79FB194C1C15004993E8 /* MenuTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableModel.h; path = Models/MenuTableModel.h; sourceTree = "<group>"; };
 		3F8E79FC194C1C15004993E8 /* MenuTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableModel.m; path = Models/MenuTableModel.m; sourceTree = "<group>"; };
+		3F8E79FE194E88AE004993E8 /* NoMatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoMatchVC.h; path = Controllers/NoMatchVC.h; sourceTree = "<group>"; };
+		3F8E79FF194E88AE004993E8 /* NoMatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoMatchVC.m; path = Controllers/NoMatchVC.m; sourceTree = "<group>"; };
+		3F8E7A01194E8908004993E8 /* OneMatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OneMatchVC.h; path = Controllers/OneMatchVC.h; sourceTree = "<group>"; };
+		3F8E7A02194E8908004993E8 /* OneMatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OneMatchVC.m; path = Controllers/OneMatchVC.m; sourceTree = "<group>"; };
+		3F8E7A04194E898D004993E8 /* MultiMatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiMatchVC.h; path = Controllers/MultiMatchVC.h; sourceTree = "<group>"; };
+		3F8E7A05194E898D004993E8 /* MultiMatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultiMatchVC.m; path = Controllers/MultiMatchVC.m; sourceTree = "<group>"; };
+		3F8E7A07194E8F16004993E8 /* WalletManager+HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WalletManager+HelperMethods.h"; path = "Categories/WalletManager+HelperMethods.h"; sourceTree = "<group>"; };
+		3F8E7A08194E8F16004993E8 /* WalletManager+HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WalletManager+HelperMethods.m"; path = "Categories/WalletManager+HelperMethods.m"; sourceTree = "<group>"; };
 		3FB8E42919317A7200B713CA /* BitBadge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitBadge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB8E42C19317A7200B713CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FB8E42E19317A7200B713CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -367,6 +379,12 @@
 				3F33735D19318F280003790B /* MenuVC.m */,
 				3F8E79EB19469ECA004993E8 /* ConfirmVC.h */,
 				3F8E79EC19469ECA004993E8 /* ConfirmVC.m */,
+				3F8E79FE194E88AE004993E8 /* NoMatchVC.h */,
+				3F8E79FF194E88AE004993E8 /* NoMatchVC.m */,
+				3F8E7A01194E8908004993E8 /* OneMatchVC.h */,
+				3F8E7A02194E8908004993E8 /* OneMatchVC.m */,
+				3F8E7A04194E898D004993E8 /* MultiMatchVC.h */,
+				3F8E7A05194E898D004993E8 /* MultiMatchVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -448,6 +466,8 @@
 			children = (
 				3F8E799E1936C7C0004993E8 /* NSDictionary+MasterNode.h */,
 				3F8E799F1936C7C0004993E8 /* NSDictionary+MasterNode.m */,
+				3F8E7A07194E8F16004993E8 /* WalletManager+HelperMethods.h */,
+				3F8E7A08194E8F16004993E8 /* WalletManager+HelperMethods.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -842,6 +862,7 @@
 				3F8E79E51946945A004993E8 /* UIProgressView+AFNetworking.m in Sources */,
 				3F8E79ED19469ECA004993E8 /* ConfirmVC.m in Sources */,
 				3F8E79E41946945A004993E8 /* UIImageView+AFNetworking.m in Sources */,
+				3F8E7A00194E88AF004993E8 /* NoMatchVC.m in Sources */,
 				3F8E79C51946944B004993E8 /* AFHTTPRequestOperation.m in Sources */,
 				3F33735E19318F280003790B /* MenuVC.m in Sources */,
 				3F3373521931833E0003790B /* UIViewController+ECSlidingViewController.m in Sources */,
@@ -852,16 +873,19 @@
 				3F8E79E71946945A004993E8 /* UIWebView+AFNetworking.m in Sources */,
 				3F8E79C71946944B004993E8 /* AFHTTPSessionManager.m in Sources */,
 				3F8E79E01946945A004993E8 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				3F8E7A09194E8F16004993E8 /* WalletManager+HelperMethods.m in Sources */,
 				3F33734F1931833E0003790B /* ECSlidingInteractiveTransition.m in Sources */,
 				3F8E79E21946945A004993E8 /* UIAlertView+AFNetworking.m in Sources */,
 				3F3373501931833E0003790B /* ECSlidingSegue.m in Sources */,
 				3F8E79C81946944B004993E8 /* AFNetworkReachabilityManager.m in Sources */,
+				3F8E7A06194E898D004993E8 /* MultiMatchVC.m in Sources */,
 				3F8E79CD1946944B004993E8 /* AFURLSessionManager.m in Sources */,
 				3F8E799C1936A485004993E8 /* WalletManager.m in Sources */,
 				3F8E79AC193D6843004993E8 /* Base64.m in Sources */,
 				3F8E79CA1946944B004993E8 /* AFURLConnectionOperation.m in Sources */,
 				3F8E79CC1946944B004993E8 /* AFURLResponseSerialization.m in Sources */,
 				3F8E79A01936C7C1004993E8 /* NSDictionary+MasterNode.m in Sources */,
+				3F8E7A03194E8908004993E8 /* OneMatchVC.m in Sources */,
 				3F8E79EA194694CF004993E8 /* BitID.m in Sources */,
 				3F8E79CB1946944B004993E8 /* AFURLRequestSerialization.m in Sources */,
 				3F8E79A8193D6831004993E8 /* CocoaSecurity.m in Sources */,
