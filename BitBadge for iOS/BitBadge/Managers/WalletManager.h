@@ -21,4 +21,8 @@
 - ( void )addKeychainWithDictionary:( NSDictionary* )dictionary;
 - ( void )addKeychainWithSeed:( NSData* )seed name:( NSString* )name encrypted:( NSNumber* )encrypted chain:( NSArray* )chain;
 
+
+
+- ( void )addAddressWithString:( NSString* )string forWallet:( NSInteger )wallet;
+
 @end

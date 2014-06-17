@@ -84,7 +84,7 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark    -   Public
+#pragma mark    -   Keychain
 
 - ( void )addKeychainWithKey:( NSString* )key
 {
@@ -118,6 +118,35 @@
 - ( void )removeKeychainWithSeed:( NSString* )seed
 {
     
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   Addresses
+
+- ( void )addAddressWithString:( NSString* )string forWallet:( NSInteger )wallet
+{
+    //    NSDictionary* keychain = @{ @"name" : @"Master Node",
+    //                                @"info" : @{ @"encrypted" : @0, @"seed" : @"12",
+    //                                             @"wallets" : @[ @{ @"Sample Wallet One" : @[ @"Sample Address One", @"Sample Address Two" ], },
+    //                                                             @{ @"Sample Wallet Two" : @[ @"Sample Address One", @"Sample Address Two" ], }, ], }, };
+    
+    NSMutableArray* mutableKeychains = [_keychains mutableCopy];
+    
+    NSMutableDictionary* mutableNode = [mutableKeychains[ _activeKeychain.integerValue ] mutableCopy];
+    
+    NSMutableDictionary* mutableWallet = mutableNode[ @"wallets" ][ wallet ];
+    
+    NSMutableArray* mutableAddreses = [mutableWallet[ mutableWallet.allKeys[ 0 ] ] mutableCopy];
+    
+    [mutableAddreses addObject:string];
+    
+    mutableWallet[ mutableWallet.allKeys[ 0 ] ] = [[NSArray alloc] initWithArray:mutableAddreses];
+    
+    mutableNode[ @"wallets" ][ wallet ] = [[NSDictionary alloc] initWithDictionary:mutableWallet];
+    
+    mutableKeychains[ _activeKeychain.integerValue ] = [[NSDictionary alloc] initWithDictionary:mutableNode];
+    
+    _keychains = [[NSArray alloc] initWithArray:mutableKeychains];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
