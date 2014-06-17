@@ -7,16 +7,30 @@
 //
 
 #import "ConfirmVC.h"
+#import "WalletManager.h"
 #import "UIViewController+ECSlidingViewController.h"
 
 @implementation ConfirmVC
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   NSObject
+
+- ( id )initWithCoder:( NSCoder* )aDecoder
+{
+    if ( self = [super initWithCoder:aDecoder] )
+    {
+        _walletManager = [WalletManager sharedInstance];
+    }
+    
+    return self;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   UIViewController
 
-- ( void )viewDidAppear:( BOOL )animated
+- ( void )viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

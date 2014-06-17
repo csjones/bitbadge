@@ -8,8 +8,12 @@
 
 #import "BitID.h"
 
+@class WalletManager;
+
 @interface ConfirmVC : UIViewController
 
 @property   ( nonatomic, strong )   BitID* bitIdModel;
+
+@property   ( nonatomic, weak )     WalletManager* walletManager;
 
 @end
