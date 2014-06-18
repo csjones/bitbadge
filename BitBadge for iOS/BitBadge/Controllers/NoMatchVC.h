@@ -12,5 +12,6 @@
 
 @property ( weak, nonatomic ) IBOutlet UILabel *hostnameLabel;
 @property ( weak, nonatomic ) IBOutlet UILabel *addressLabel;
+@property ( weak, nonatomic ) IBOutlet UILabel *walletLabel;
 
 @end
