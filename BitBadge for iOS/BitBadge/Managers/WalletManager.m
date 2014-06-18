@@ -134,7 +134,11 @@
     
     NSMutableDictionary* mutableNode = [mutableKeychains[ _activeKeychain.integerValue ] mutableCopy];
     
-    NSMutableDictionary* mutableWallet = mutableNode[ @"wallets" ][ wallet ];
+    NSMutableDictionary* mutableInfo = [mutableNode[ @"info" ] mutableCopy];
+    
+    NSMutableArray* mutableWallets = [mutableInfo[ @"wallets" ] mutableCopy];
+    
+    NSMutableDictionary* mutableWallet = [mutableWallets[ wallet ] mutableCopy];
     
     NSMutableArray* mutableAddreses = [mutableWallet[ mutableWallet.allKeys[ 0 ] ] mutableCopy];
     
@@ -142,7 +146,11 @@
     
     mutableWallet[ mutableWallet.allKeys[ 0 ] ] = [[NSArray alloc] initWithArray:mutableAddreses];
     
-    mutableNode[ @"wallets" ][ wallet ] = [[NSDictionary alloc] initWithDictionary:mutableWallet];
+    mutableWallets[ wallet ] = [[NSDictionary alloc] initWithDictionary:mutableWallet];
+    
+    mutableInfo[ @"wallets" ] = [[NSArray alloc] initWithArray:mutableWallets];
+    
+    mutableNode[ @"info" ] = [[NSDictionary alloc] initWithDictionary:mutableInfo];
     
     mutableKeychains[ _activeKeychain.integerValue ] = [[NSDictionary alloc] initWithDictionary:mutableNode];
     

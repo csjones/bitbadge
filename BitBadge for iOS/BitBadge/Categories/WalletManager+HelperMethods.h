@@ -10,6 +10,8 @@
 
 @interface WalletManager ( HelperMethods )
 
+- ( NSDictionary* )currentKeychain;
+
 - ( NSUInteger )numberOfMatchesForString:( NSString* )string;
 
 @end

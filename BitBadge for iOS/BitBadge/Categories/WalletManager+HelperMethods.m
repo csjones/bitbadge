@@ -10,6 +10,11 @@
 
 @implementation WalletManager ( HelperMethods )
 
+- ( NSDictionary* )currentKeychain
+{
+    return self.keychains[ self.activeKeychain.integerValue ];
+}
+
 - ( NSUInteger )numberOfMatchesForString:( NSString* )string
 {
     NSUInteger count = 0;
