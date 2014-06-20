@@ -33,7 +33,8 @@
     if ( self = [super init] )
     {
         NSDictionary* keychain = @{ @"name" : @"Master Node",
-                                    @"info" : @{ @"encrypted" : @0, @"seed" : @"12",
+                                    @"info" : @{ @"encrypted" : @0,
+                                                 @"seed" : @"12",
                                                  @"wallets" : @[ @{ @"Sample Wallet One" : @[ @"Sample Address One", @"Sample Address Two" ], },
                                                                  @{ @"Sample Wallet Two" : @[ @"Sample Address One", @"Sample Address Two" ], }, ], }, };
         
@@ -125,11 +126,6 @@
 
 - ( void )addAddressWithString:( NSString* )string forWallet:( NSInteger )wallet
 {
-    //    NSDictionary* keychain = @{ @"name" : @"Master Node",
-    //                                @"info" : @{ @"encrypted" : @0, @"seed" : @"12",
-    //                                             @"wallets" : @[ @{ @"Sample Wallet One" : @[ @"Sample Address One", @"Sample Address Two" ], },
-    //                                                             @{ @"Sample Wallet Two" : @[ @"Sample Address One", @"Sample Address Two" ], }, ], }, };
-    
     NSMutableArray* mutableKeychains = [_keychains mutableCopy];
     
     NSMutableDictionary* mutableNode = [mutableKeychains[ _activeKeychain.integerValue ] mutableCopy];
@@ -155,6 +151,8 @@
     mutableKeychains[ _activeKeychain.integerValue ] = [[NSDictionary alloc] initWithDictionary:mutableNode];
     
     _keychains = [[NSArray alloc] initWithArray:mutableKeychains];
+    
+    [self writeToDeviceKeychain];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
