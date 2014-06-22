@@ -40,11 +40,11 @@
         
         [self addKeychainWithDictionary:keychain];
         
-        NSLog(@"BTCKeychain %@", [[BTCKeychain alloc] initWithSeed:[[keychain seedWithKey:nil] dataUsingEncoding:NSUTF8StringEncoding]]);
+//        NSLog(@"BTCKeychain %@", [[BTCKeychain alloc] initWithSeed:[[keychain seedWithKey:nil] dataUsingEncoding:NSUTF8StringEncoding]]);
         
         [self writeToDeviceKeychain];
         
-        [self readFromDeviceKeychain];
+//        [self readFromDeviceKeychain];
         
         _activeKeychain = @0;
         
@@ -160,7 +160,7 @@
 
 - ( NSString* )service
 {
-    return @"BitBadge";
+    return @"co.GigaBitcoin.BitBadge";
 }
 
 - ( void )writeToDeviceKeychain
@@ -185,7 +185,7 @@
 {
     SSKeychainQuery* query = [[SSKeychainQuery alloc] init];
     
-    query.service = [self service];
+    query.service = self.service;
     query.accessGroup = ( __bridge NSString* )kSecClassKey;
     
     NSError* error = nil;
