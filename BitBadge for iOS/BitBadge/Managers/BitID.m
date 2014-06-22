@@ -20,7 +20,7 @@
 {
     NSString* baseURL = [[NSString alloc] initWithFormat:@"http://%@", [[[NSURL alloc] initWithString:challenge] host] ];
     
-    NSLog(@"baseURL %@", baseURL);
+//    NSLog(@"baseURL %@", baseURL);
     
     if ( self = [super initWithBaseURL: [[NSURL alloc] initWithString:baseURL] ] )
     {
@@ -45,11 +45,11 @@
 {
     NSURL* url = [[NSURL alloc] initWithString:_challenge];
     
-    NSLog(@"url.scheme %@", url.scheme);
-    
-    NSLog(@"url.host %@", url.host);
-    
-    NSLog(@"url.path %@", url.path);
+//    NSLog(@"url.scheme %@", url.scheme);
+//    
+//    NSLog(@"url.host %@", url.host);
+//    
+//    NSLog(@"url.path %@", url.path);
     
     NSData* signature = [self.walletManager.keychains[ 0 ] sign:_challenge addressAtIndex:0 withWalletIndex:0];
     
@@ -57,7 +57,7 @@
                                                                         [self.walletManager.keychains[ 0 ] publicKeyAtIndex:0 withWalletIndex:0], @"address",
                                                                         [signature base64EncodedString], @"signature", nil];
     
-    NSLog(@"params %@", params);
+//    NSLog(@"params %@", params);
     
     [self POST:[[NSString alloc] initWithFormat:@"%@", url.path]
     parameters:params
